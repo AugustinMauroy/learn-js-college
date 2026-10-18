@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        .nombre {
+            text-align: center;
+            background-color: blue;
+            color: white;
+            font-weight: bold;
+        }
+
+        th {
+            background-color: #d3d3d3;
+            color: blue;
+            font-weight: bold;
+        }
+        tr {
+            background-color: white;
+        }
+        table tr:nth-child(odd) {
+            background-color: bisque;
+        }
+        tr td:nth-child(3) {
+            font-weight: bold;
+        }
+        
+    </style>
+</head>
+<body>
+    <p>Voici le nombre entré :</p>
+    <p class="nombre">7</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Facteur</th>
+                <th>Résultat</th>
+            </tr>
+        </thead>
+        <tbody id="liste">
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        const nombre = Number(document.querySelector('.nombre').textContent);
+        const liste = document.getElementById('liste');
+
+        for (let i = 1; i <= 100; i++) {
+            const tr = document.createElement('tr');
+
+            for (let j = 0; j < 3; j++) {
+                const td = document.createElement('td');
+
+                switch (j) {
+                    case 0:
+                        td.textContent = nombre;
+                        break;
+                    case 1:
+                        td.textContent = i;
+                        break;
+                    case 2:
+                        td.textContent = i * nombre;
+                        break;
+                }
+                tr.appendChild(td);
+            }
+
+            liste.appendChild(tr);
+        }
+
+    </script>
+</body>
+</html>

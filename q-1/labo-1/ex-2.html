@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+  </head>
+  <body>
+    <p><strong>JavaScript</strong> est un langage de scripts compris
+    par la plupart des navigateurs web. Ce sont ces derniers qui
+    exécutent le code Javascript.</p>
+    <p>Grâce à JavaScript, les pages web deviennent</p>
+    <ul>
+      <li>interactives,</li>
+      <li>plus intéressantes,</li>
+      <li>plus <span id='dyna'>dynamiques</span> !</li>
+    </ul>
+    <p>JavaScript est un standard géré par la
+    <a href=' http://www.ecma-international.org/'>ECMA</a>.</p>
+
+    <script type="text/javascript">
+      const dyna = document.getElementById('dyna');
+
+      dyna.addEventListener('click', () => {
+        if (dyna.innerHTML === 'dynamiques') {
+          dyna.innerHTML = 'belles';
+        } else {
+          dyna.innerHTML = 'dynamiques';
+        }
+      });
+    </script>
+  </body>
+</html>
